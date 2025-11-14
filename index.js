@@ -5,13 +5,16 @@
 
 const express = require("express");
 const cors = require("cors");
+const connectToDB = require("./db");
+
+("mongodb+srv://FlowArt:Pa03d026$@food-delivery.dycgfvo.mongodb.net/");
 
 const app = express();
 const PORT = process.env.PORT || 999;
 
 app.use(cors());
 app.use(express.json());
-
+connectToDB();
 app.get("/", (req, res) => {
   res.json("Yo what's up my dudes   ");
 });
